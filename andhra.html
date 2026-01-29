@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIIT College | Vizag Tech Events</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+body{
+  font-family:'Oxanium',sans-serif;
+  background:#000;
+  color:#e5e7eb;
+  padding-top:80px;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+.navbar{
+  background:linear-gradient(to bottom,#020202,#000);
+  border-bottom:1px solid rgba(250,204,21,.3);
+}
+nav a{
+  position:relative;
+}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#facc15;
+  transition:.3s;
+}
+nav a:hover::after{width:100%;}
+
+/* HERO BANNER */
+.hero{
+  position:relative;
+  height:60vh;
+  min-height:420px;
+  overflow:hidden;
+}
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.6) contrast(1.2);
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.85),rgba(0,0,0,.6),#000);
+}
+.hero-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:2;
+}
+.hero-title{
+  font-family:'Orbitron',sans-serif;
+  font-size:3.2rem;
+  color:#facc15;
+  letter-spacing:2px;
+}
+.hero-sub{
+  max-width:720px;
+  margin:16px auto 0;
+  color:#cbd5f5;
+  font-size:1.1rem;
+}
+
+/* SECTION HEADERS */
+.section-title{
+  font-family:'Orbitron',sans-serif;
+  color:#facc15;
+  font-size:2.5rem;
+  margin-bottom:50px;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+/* EVENT & CLUB CARDS */
+.game-card{
+  background:#050505;
+  border:1px solid rgba(250,204,21,.35);
+  border-radius:16px;
+  overflow:hidden;
+  transition:.35s;
+  box-shadow:0 0 30px rgba(250,204,21,.25);
+}
+.game-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 60px rgba(250,204,21,.6);
+}
+.game-card img{
+  height:180px;
+  width:100%;
+  object-fit:cover;
+}
+.game-card h3{
+  font-family:'Orbitron',sans-serif;
+  color:#facc15;
+  font-size:1.2rem;
+}
+.game-btn{
+  display:inline-block;
+  margin-top:14px;
+  background:#facc15;
+  color:#000;
+  padding:10px 22px;
+  font-weight:700;
+  border-radius:4px;
+}
+.game-btn:hover{filter:brightness(1.1);}
+
+/* GALLERY */
+@keyframes scrollX {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scrollX{
+  display:flex;
+  gap:24px;
+  width:max-content;
+  animation:scrollX 30s linear infinite;
+}
+.animate-scrollX:hover{animation-play-state:paused;}
+
+/* FOOTER */
+footer{
+  background:#000;
+  border-top:1px solid rgba(250,204,21,.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="index.html" class="font-[Orbitron] text-yellow-400 tracking-widest text-lg">
+      VIZAG TECH EVENTS
+    </a>
+    <nav class="hidden md:flex gap-8 text-gray-300">
+      <a href="index.html">HOME</a>
+      <a href="index.html#colleges">COLLEGES</a>
+      <a href="#events">EVENTS</a>
+      <a href="#clubs">CLUBS</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/andhra.jpeg" alt="VIIT">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" data-aos="fade-up">
+    <div>
+      <h1 class="hero-title">ANDHRA UNIVERSITY</h1>
+      <p class="hero-sub">
+        Research-driven university hosting national-level technical symposiums, paper presentations, and advanced engineering workshops.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events" class="py-24 bg-black">
+  <h2 class="section-title">UPCOMING EVENTS</h2>
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+    <div class="game-card" data-aos="zoom-in">
+      <img src="images/event1.webp">
+      <div class="p-6">
+        <h3>Technoverse 2025</h3>
+        <p class="text-gray-400 mt-2">National coding & robotics fest</p>
+        <p class="text-yellow-400 mt-2">Nov 10–12 • ₹300 In 8 Hours Only </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScj_KG3gs8QEZkFWtJk4TdjHjVJ5Dv1TBrOaSsAP7D-aSzi0w/viewform?usp=publish-editor" class="game-btn">Register</a>
+      
+      </div>
+    </div>
+
+    <div class="game-card" data-aos="zoom-in">
+      <img src="images/event2.png">
+      <div class="p-6">
+        <h3>AI Bootcamp</h3>
+        <p class="text-gray-400 mt-2">Hands-on ML workshops</p>
+        <p class="text-yellow-400 mt-2">Nov 18 • ₹150</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScCoeMRHErsdd73nt721vwmjpG_3MyA0G33ZgK9A_KRExAKww/viewform?usp=header" class="game-btn">Register</a>
+      </div>
+    </div>
+
+    <div class="game-card" data-aos="zoom-in">
+      <img src="images/event3.webp">
+      <div class="p-6">
+        <h3>Intra Sports Meet</h3>
+        <p class="text-gray-400 mt-2">Inter-department competitions</p>
+        <p class="text-yellow-400 mt-2">Nov 28–30</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_fXqzdZWvwwgLT5ssWJbSSzA9RDhHHQRPB9gx6Z-VQKAuiA/viewform?usp=publish-editor" class="game-btn">Register</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- GALLERY -->
+<section class="py-24 bg-black overflow-hidden">
+  <h2 class="section-title">GALLERY</h2>
+  <div class="overflow-hidden">
+    <div class="animate-scrollX px-6">
+      <img src="images/event1.webp" class="rounded-xl w-96 h-60 object-cover">
+      <img src="images/event2.png" class="rounded-xl w-96 h-60 object-cover">
+      <video autoplay muted loop class="rounded-xl w-96 h-60 object-cover">
+        <source src="images/videoplayback.mp4" type="video/mp4">
+      </video>
+      <img src="images/event3.webp" class="rounded-xl w-96 h-60 object-cover">
+    </div>
+  </div>
+</section>
+
+<footer class="py-6 text-center text-gray-400">
+  © 2025 Vizag Tech Events — Blizzard Style Inner Page
+</footer>
+
+<script>
+AOS.init({ duration:900, once:true });
+</script>
+
+</body>
+</html>

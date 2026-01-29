@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal Bay</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Oxanium:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+body{
+  font-family:'Oxanium',sans-serif;
+  background:#000;
+  color:#e5e7eb;
+  overflow-x:hidden;
+}
+
+/* NAVBAR (BLIZZARD STYLE) */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:50;
+  background:linear-gradient(to bottom,#020202,#000);
+  border-bottom:1px solid rgba(250,204,21,.25);
+}
+.navbar a{
+  position:relative;
+  font-weight:600;
+}
+.navbar a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#facc15;
+  transition:.3s;
+}
+.navbar a:hover::after{width:100%;}
+
+/* HERO */
+.hero{
+  position:relative;
+  height:97vh;
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  padding-top:80px;
+  overflow:hidden;
+}
+
+/* HERO BACKGROUND IMAGE */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+.hero-bg img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:brightness(.6) contrast(1.2);
+}
+
+
+/* DARK CINEMATIC OVERLAY */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to right,
+      rgba(0,0,0,.95) 10%,
+      rgba(0,0,0,.75) 40%,
+      rgba(0,0,0,.2) 70%);
+  z-index:2;
+}
+
+/* HERO CONTENT (LEFT) */
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:650px;
+  padding-left:6%;
+}
+
+.hero-badge{
+  font-family:'Orbitron',sans-serif;
+  color:#facc15;
+  letter-spacing:2px;
+  font-size:.8rem;
+  margin-bottom:18px;
+}
+
+.hero-title{
+  font-family:'Orbitron',sans-serif;
+  font-size:4rem;
+  font-weight:800;
+  line-height:1.1;
+  text-transform:uppercase;
+  margin-bottom:24px;
+}
+.hero-title span{
+  color:#facc15;
+  text-shadow:0 0 25px rgba(250,204,21,.6);
+}
+
+.hero-desc{
+  max-width:520px;
+  color:#cbd5f5;
+  font-size:1.15rem;
+  margin-bottom:36px;
+}
+
+/* HERO BUTTONS */
+.hero-actions{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.hero-btn{
+  padding:14px 38px;
+  border-radius:4px;
+  font-weight:700;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  transition:.3s;
+}
+.hero-btn-primary{
+  background:#facc15;
+  color:#000;
+}
+.hero-btn-primary:hover{
+  filter:brightness(1.1);
+}
+.hero-btn-secondary{
+  border:1px solid rgba(250,204,21,.6);
+  color:#facc15;
+}
+.hero-btn-secondary:hover{
+  background:rgba(250,204,21,.15);
+}
+
+/* COLLEGES */
+.college-card{
+  background:#050505;
+  border:1px solid rgba(250,204,21,.35);
+  padding:26px;
+  transition:.35s;
+}
+.college-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 40px rgba(250,204,21,.5);
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  border-top:1px solid rgba(250,204,21,.3);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    height:auto;
+    padding:140px 0 100px;
+  }
+  .hero-content{
+    padding:0 20px;
+  }
+  .hero-title{
+    font-size:2.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="font-[Orbitron] text-xl tracking-widest text-yellow-400">
+      SIGNAL BAY
+    </h1>
+    <nav class="hidden md:flex gap-10 text-gray-300">
+      <a href="#home">HOME</a>
+      <a href="#colleges">COLLEGES</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <img src="images/index.jpg" alt="Hero">
+  </div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content" data-aos="fade-right">
+    <div class="hero-badge">WELCOME TO SIGNAL BAY</div>
+
+    <h2 class="hero-title">
+      ENGINEERING<br>
+      THE <span>FUTURE</span>
+    </h2>
+
+    <p class="hero-desc">
+      Hackathons, tech fests, coding battles, and innovation events from Vizag’s top engineering colleges — all in one place.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#colleges" class="hero-btn hero-btn-primary">
+        Explore Events
+      </a>
+      <a href="#" class="hero-btn hero-btn-secondary">
+        Support & Queries
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COLLEGES -->
+<section id="colleges" class="py-24 bg-black">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h3 class="font-[Orbitron] text-4xl text-yellow-400 mb-14 tracking-wider">
+      TOP ENGINEERING COLLEGES
+    </h3>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <a href="viit.html"><div class="college-card">VIGNAN'S COLLEGE<br><span class="text-gray-400">AI • Hackathons</span></div></a>
+      <a href="anits.html"><div class="college-card">ANITS COLLEGE<br><span class="text-gray-400">Robotics • Tech Fests</span></div></a>
+      <a href="gitam.html"><div class="college-card">GITAM UNIVERSITY<br><span class="text-gray-400">Innovation • Coding</span></div></a>
+      <a href="andhra.html"><div class="college-card">ANDHRA UNIVERSITY<br><span class="text-gray-400">Research • Presentations</span></div></a>
+      <a href="raghu.html"><div class="college-card">RAGHU COLLEGE<br><span class="text-gray-400">Hackathons • Startups</span></div></a>
+      <a href="gvp.html"><div class="college-card">GVP COLLEGE<br><span class="text-gray-400">Tech Carnivals</span></div></a>
+    </div>
+  </div>
+</section>
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-black border-t border-yellow-400/30">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h3 class="font-[Orbitron] text-4xl text-yellow-400 mb-10 tracking-wider">
+      ABOUT VIZAG TECH EVENTS
+    </h3>
+
+    <p class="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto mb-10">
+      <strong class="text-yellow-400">Vizag Tech Events</strong> is a centralized
+      engineering community platform designed to identify, showcase, and manage
+      technical events happening across top engineering colleges in
+      Visakhapatnam.
+    </p>
+
+    <p class="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto mb-10">
+      This website helps students easily discover college-wise events such as
+      hackathons, tech fests, coding competitions, robotics challenges,
+      workshops, and innovation summits conducted by Vizag’s engineering
+      institutions — all in one place.
+    </p>
+
+    <p class="text-gray-400 text-lg leading-relaxed max-w-4xl mx-auto mb-12">
+      Students can explore events by college, view complete event details, and
+      directly register for events through this platform without searching
+      across multiple sources. The goal is to simplify event participation and
+      build a strong, connected technical ecosystem in Vizag.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8 text-left">
+      <div class="college-card">
+        <h4 class="text-yellow-400 font-bold mb-2">🎯 Event Discovery</h4>
+        <p class="text-gray-400 text-sm">
+          Find all engineering college events in Vizag categorized by college
+          and technology domain.
+        </p>
+      </div>
+
+      <div class="college-card">
+        <h4 class="text-yellow-400 font-bold mb-2">📝 Direct Registration</h4>
+        <p class="text-gray-400 text-sm">
+          Register for hackathons, workshops, and competitions directly through
+          this website.
+        </p>
+      </div>
+
+      <div class="college-card">
+        <h4 class="text-yellow-400 font-bold mb-2">🚀 Verified College Events</h4>
+        <p class="text-gray-400 text-sm">
+          Only authentic, college-approved hackathons, tech fests, workshops, and competitions — no spam, no confusion.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="py-6 text-center text-gray-400">
+  © 2025 Vizag Tech Events — Signal Bay
+</footer>
+
+<script>
+AOS.init({ duration:1000, once:true });
+</script>
+
+</body>
+</html>
