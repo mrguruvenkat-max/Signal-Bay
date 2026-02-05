@@ -52,7 +52,7 @@ body{
 /* HERO */
 .hero{
   position:relative;
-  height:97vh;
+  height:100svh;
   min-height:600px;
   display:flex;
   align-items:center;
@@ -154,16 +154,54 @@ body{
   background:rgba(250,204,21,.15);
 }
 
-/* COLLEGES */
+/* COLLEGE PREVIEW SYSTEM */
+.college-wrapper{
+  position:relative;
+}
+
+.preview{
+  position:absolute;
+  top:-190px;
+  left:50%;
+  transform:translateX(-50%);
+  width:240px;
+  background:#050505;
+  border:1px solid rgba(250,204,21,.5);
+  box-shadow:0 0 25px rgba(250,204,21,.6);
+  opacity:0;
+  pointer-events:none;
+  transition:.35s;
+}
+
+.preview img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
+
+.preview-title{
+  text-align:center;
+  padding:10px;
+  font-family:Orbitron;
+  color:#facc15;
+}
+
+.college-wrapper:hover .preview{
+  opacity:1;
+  transform:translateX(-50%) translateY(-10px);
+}
+
+/* COLLEGE CARD */
 .college-card{
   background:#050505;
   border:1px solid rgba(250,204,21,.35);
   padding:26px;
   transition:.35s;
 }
+
 .college-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 40px rgba(250,204,21,.5);
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(250,204,21,.6);
 }
 
 /* FOOTER */
@@ -235,21 +273,102 @@ footer{
 </section>
 
 <!-- COLLEGES -->
-<section id="colleges" class="py-24 bg-black">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h3 class="font-[Orbitron] text-4xl text-yellow-400 mb-14 tracking-wider">
-      TOP ENGINEERING COLLEGES
-    </h3>
+<section id="colleges" class="py-24 mt-24">
 
-    <div class="grid md:grid-cols-3 gap-10">
-      <a href="viit.html"><div class="college-card">VIGNAN'S COLLEGE<br><span class="text-gray-400">AI • Hackathons</span></div></a>
-      <a href="anits.html"><div class="college-card">ANITS COLLEGE<br><span class="text-gray-400">Robotics • Tech Fests</span></div></a>
-      <a href="gitam.html"><div class="college-card">GITAM UNIVERSITY<br><span class="text-gray-400">Innovation • Coding</span></div></a>
-      <a href="andhra.html"><div class="college-card">ANDHRA UNIVERSITY<br><span class="text-gray-400">Research • Presentations</span></div></a>
-      <a href="raghu.html"><div class="college-card">RAGHU COLLEGE<br><span class="text-gray-400">Hackathons • Startups</span></div></a>
-      <a href="gvp.html"><div class="college-card">GVP COLLEGE<br><span class="text-gray-400">Tech Carnivals</span></div></a>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-6 text-center">
+
+<h3 class="font-[Orbitron] text-4xl text-yellow-400 mb-14">
+TOP ENGINEERING COLLEGES
+</h3>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<!-- VIGNAN -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/viit.jpg">
+<div class="preview-title">VIGNAN</div>
+</div>
+<a href="viit.html">
+<div class="college-card">
+VIGNAN'S COLLEGE<br>
+<span class="text-gray-400">AI • Hackathons</span>
+</div>
+</a>
+</div>
+
+<!-- ANITS -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/anits.jpg">
+<div class="preview-title">ANITS</div>
+</div>
+<a href="anits.html">
+<div class="college-card">
+ANITS COLLEGE<br>
+<span class="text-gray-400">Robotics</span>
+</div>
+</a>
+</div>
+
+<!-- GITAM -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/gitam.jpg">
+<div class="preview-title">GITAM</div>
+</div>
+<a href="gitam.html">
+<div class="college-card">
+GITAM UNIVERSITY<br>
+<span class="text-gray-400">Coding</span>
+</div>
+</a>
+</div>
+
+<!-- ANDHRA -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/andhra.jpg">
+<div class="preview-title">ANDHRA</div>
+</div>
+<a href="andhra.html">
+<div class="college-card">
+ANDHRA UNIVERSITY<br>
+<span class="text-gray-400">Research</span>
+</div>
+</a>
+</div>
+
+<!-- RAGHU -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/raghu.jpg">
+<div class="preview-title">RAGHU</div>
+</div>
+<a href="raghu.html">
+<div class="college-card">
+RAGHU COLLEGE<br>
+<span class="text-gray-400">Hackathons</span>
+</div>
+</a>
+</div>
+
+<!-- GVP -->
+<div class="college-wrapper">
+<div class="preview">
+<img src="images/gvp.jpg">
+<div class="preview-title">GVP</div>
+</div>
+<a href="gvp.html">
+<div class="college-card">
+GVP COLLEGE<br>
+<span class="text-gray-400">Tech Fests</span>
+</div>
+</a>
+</div>
+
+</div>
+</div>
 </section>
 <!-- ABOUT -->
 <section id="about" class="py-24 bg-black border-t border-yellow-400/30">
